@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Box, Spinner, Text } from "@chakra-ui/react";
 import { Web3Button, useContract, useContractRead } from "@thirdweb-dev/react";
 import { LOTTERY_CONTRACT_ADDRESS } from "../const/addresses";
 import { ethers } from "ethers";
+import { useState } from "react";
 
 export default function withdrawBalance() {
     const {
@@ -18,7 +20,7 @@ export default function withdrawBalance() {
             <Box>
                 <Text fontWeight={"bold"} mb={4} fontSize={"xl"}>Contract Balance</Text>
                 {!contractBalanceLoading ? (
-                    <Text fontSize={"xl"}>{ethers.utils.formatEther(contractBalance)} MATIC</Text>
+                    <Text fontSize={"xl"}>{ethers.utils.formatEther(contractBalance)} ETH </Text>
                 ) : (
                     <Spinner />
                 )}
